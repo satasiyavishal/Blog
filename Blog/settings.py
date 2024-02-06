@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-@2@gvtf59!e721e_((y%-*7#efcx_!nyc_@w8sc&nszrxwf=^4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -129,26 +129,21 @@ FRAOLA_EDITOR_THIRD_PARTY = ('image_aviary', 'spell_checker')
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-# import os
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR , 'staticfiles')
+import os
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR , 'staticfiles')
 
-# STATICFILES_DIR = {
-#     os.path.join(BASE_DIR , "public/static")
-# }
+STATICFILES_DIR = {
+    os.path.join(BASE_DIR , "public/static")
+}
 
-# MEDIA_ROOT = os.path.join(BASE_DIR , 'public/static')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR , 'public/static')
+MEDIA_URL = '/media/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-import os
-
-STATICFILES_DIR = os.path.json(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST ='smtp.gmail.com'
